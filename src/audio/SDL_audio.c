@@ -1559,8 +1559,12 @@ SDL_OpenAudio(SDL_AudioSpec * desired, SDL_AudioSpec * obtained)
     }
 
     if (obtained) {
-        id = open_audio_device(NULL, 0, desired, obtained,
-                               SDL_AUDIO_ALLOW_ANY_CHANGE, 1);
+        #ifndef _MSC_VER
+        //id = open_audio_device(NULL, 0, desired, obtained,
+        //                       SDL_AUDIO_ALLOW_ANY_CHANGE, 1);
+            #warning "JC: SDL_OpenAudio modified to enforce desired sound format"
+        #endif
+        id = open_audio_device(NULL, 0, desired, obtained, 0, 1);
     } else {
         SDL_AudioSpec _obtained;
         SDL_zero(_obtained);
