@@ -20,8 +20,8 @@
   3. This notice may not be removed or altered from any source distribution.
 */
 
-#ifndef SDL_config_h_
-#define SDL_config_h_
+#ifndef SDL_config_linux_h_
+#define SDL_config_linux_h_
 
 /**
  *  \file SDL_config.h.in
@@ -471,4 +471,4 @@
 /* Enable dynamic libsamplerate support */
 #define SDL_LIBSAMPLERATE_DYNAMIC "libsamplerate.so.0"
 
-#endif /* SDL_config_h_ */
+#endif /* SDL_config_linux_h_ */
